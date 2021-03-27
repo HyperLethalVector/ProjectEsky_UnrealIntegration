@@ -1,0 +1,27 @@
+[
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\IntelRealsenseTracker.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\IntelRealsenseTracker.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\ProjectEsky.Build.cs",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\ProjectEsky.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\ProjectEsky.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	}
+]

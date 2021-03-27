@@ -1,0 +1,128 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "ProjectEsky (Debug)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEsky Win64 Debug Build",
+			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ProjectEsky (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEsky Win64 DebugGame Build",
+			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ProjectEsky (Development)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEsky Win64 Development Build",
+			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ProjectEsky (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEsky Win64 Shipping Build",
+			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ProjectEsky (Test)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEsky Win64 Test Build",
+			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ProjectEskyEditor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEskyEditor Win64 Debug Build",
+			"program": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+			"args": [
+				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject"
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ProjectEskyEditor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEskyEditor Win64 DebugGame Build",
+			"program": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
+			"args": [
+				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject"
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ProjectEskyEditor (Development)",
+			"request": "launch",
+			"preLaunchTask": "ProjectEskyEditor Win64 Development Build",
+			"program": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"args": [
+				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject"
+			],
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "clr",
+			"request": "launch",
+			"program": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+			"console": "externalTerminal",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=\"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject\"",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26"
+		}
+	]
+}
