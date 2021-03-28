@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-#include "ProjectEsky.h"
 #include "IntelRealsenseTracker.h"
+#include "ProjectEsky.h"
+
 #pragma region DLL callback function definitions
 typedef void(*FuncReceiveCameraImageCallbackWithID)(int instanceID, unsigned char* info, int lengthofarray, int width, int height, int pixelCount);
 typedef void(*LocalizationEventCallback)(int trackerID, int LocalizationDelegate);
 typedef void(*MapDataCallback)(int trackerID);
-typedef void(*LocalizationPoseReceivedCallback)(int trackerID, string ObjectID, float tx, float ty, float tz, float qx, float qy, float qz, float qw);
+typedef void(*LocalizationPoseReceivedCallback)(int trackerID, unsigned char* ObjectID, float tx, float ty, float tz, float qx, float qy, float qz, float qw);
 typedef void(*DeltaPoseUpdateCallback)(int trackerID, float* poseDataLeft, float* poseDataRight);//needs refactoring into a map callback to subscribe to
 typedef void(*FuncTextureInitializedCallback)(int trackerID, int TextureWidth, int TextureHeight, int textureCount, float fx, float fy, float cx, float cy, float fovx, float fovy, float focalLength, float d1, float d2, float d3, float d4, float d5);
 #pragma endregion
@@ -63,18 +63,111 @@ void *v_dllHandle;
 #pragma region Load DLL
 
 // Method to import a DLL.
-bool UIntelRealsenseTracker::importDLL(FString folder, FString name)
+bool UIntelRealsenseTracker::importDLL()
 {
-    FString filePath = *FPaths::GamePluginsDir() + folder + "/" + name;
-
+    FString filePath = *FPaths::ProjectPluginsDir() + FString("libProjectEskyLLAPIIntel.dll");
+    UE_LOG(LogTemp, Warning, TEXT("Location of plugin: %s"),*filePath);   
     if (FPaths::FileExists(filePath))
     {
+        UE_LOG(LogTemp, Warning, TEXT("File existed!"));           
         v_dllHandle = FPlatformProcess::GetDllHandle(*filePath); // Retrieve the DLL.
         if (v_dllHandle != NULL)
         {
+            UE_LOG(LogTemp, Warning, TEXT("Got file handle!")); 
+            //import all the functions
+            m_RegisterDeltaPoseUpdate = (_RegisterDeltaPoseUpdate)FPlatformProcess::GetDllExport(v_dllHandle, *FString("RegisterDeltaPoseUpdate"));
+            m_HookDeviceToIntel = (_HookDeviceToIntel)FPlatformProcess::GetDllExport(v_dllHandle, *FString("HookDeviceToIntel"));
+            m_SetFilterEnabled = (_SetFilterEnabled)FPlatformProcess::GetDllExport(v_dllHandle, *FString("SetFilterEnabled"));
+            m_UpdateFilterTranslationParams = (_UpdateFilterTranslationParams)FPlatformProcess::GetDllExport(v_dllHandle, *FString("UpdateFilterTranslationParams"));
+            m_UpdateFilterRotationParams = (_UpdateFilterRotationParams)FPlatformProcess::GetDllExport(v_dllHandle, *FString("UpdateFilterRotationParams"));
+            m_GetLatestPose = (_GetLatestPose)FPlatformProcess::GetDllExport(v_dllHandle, *FString("GetLatestPose"));
+            m_InitializeTrackerObject = (_InitializeTrackerObject)FPlatformProcess::GetDllExport(v_dllHandle, *FString("InitializeTrackerObject"));
+            m_SetSerialComPort = (_SetSerialComPort)FPlatformProcess::GetDllExport(v_dllHandle, *FString("SetSerialComPort"));
+            m_StartTrackerThread = (_StartTrackerThread)FPlatformProcess::GetDllExport(v_dllHandle, *FString("StartTrackerThread"));
+            m_StopTrackers = (_StopTrackers)FPlatformProcess::GetDllExport(v_dllHandle, *FString("StopTrackers"));
+            m_RegisterObjectPoseCallback = (_RegisterObjectPoseCallback)FPlatformProcess::GetDllExport(v_dllHandle, *FString("RegisterObjectPoseCallback"));
+            m_RegisterLocalizationCallback = (_RegisterLocalizationCallback)FPlatformProcess::GetDllExport(v_dllHandle, *FString("RegisterLocalizationCallback"));
+            m_RegisterBinaryMapCallback = (_RegisterBinaryMapCallback)FPlatformProcess::GetDllExport(v_dllHandle, *FString("RegisterBinaryMapCallback"));
+            m_SetBinaryMapData = (_SetBinaryMapData)FPlatformProcess::GetDllExport(v_dllHandle, *FString("SetBinaryMapData"));
+            m_ObtainOriginInLocalizedMap = (_ObtainOriginInLocalizedMap)FPlatformProcess::GetDllExport(v_dllHandle, *FString("ObtainOriginInLocalizedMap"));
+            m_ObtainMap = (_ObtainMap)FPlatformProcess::GetDllExport(v_dllHandle, *FString("ObtainMap"));
+            m_FlagMapImport = (_FlagMapImport)FPlatformProcess::GetDllExport(v_dllHandle, *FString("FlagMapImport"));
+            m_EnablePassthrough = (_EnablePassthrough)FPlatformProcess::GetDllExport(v_dllHandle, *FString("EnablePassthrough"));
+            m_PostRenderReset = (_PostRenderReset)FPlatformProcess::GetDllExport(v_dllHandle, *FString("PostRenderReset"));
+            m_SetLeftRightEyeTransform = (_SetLeftRightEyeTransform)FPlatformProcess::GetDllExport(v_dllHandle, *FString("SetLeftRightEyeTransform"));
+            m_SetTimeOffset = (_SetTimeOffset)FPlatformProcess::GetDllExport(v_dllHandle, *FString("SetTimeOffset"));            
             return true;
         }
     }
     return false;    // Return an error.
 }
 #pragma endregion Load DLL
+
+
+#pragma region Unload DLL
+UIntelRealsenseTracker::UIntelRealsenseTracker(){
+    PrimaryComponentTick.bCanEverTick = true;
+}
+void UIntelRealsenseTracker::freeDLL(){
+    if (v_dllHandle != NULL)
+        {
+            //import all the functions
+            m_RegisterDeltaPoseUpdate = NULL;
+            m_HookDeviceToIntel = NULL;
+            m_SetFilterEnabled = NULL;
+            m_UpdateFilterTranslationParams = NULL;
+            m_UpdateFilterRotationParams = NULL;
+            m_GetLatestPose = NULL;
+            m_InitializeTrackerObject = NULL;
+            m_SetSerialComPort = NULL;
+            m_StartTrackerThread = NULL;
+            m_StopTrackers = NULL;
+            m_RegisterObjectPoseCallback = NULL;
+            m_RegisterLocalizationCallback = NULL;
+            m_RegisterBinaryMapCallback = NULL;
+            m_SetBinaryMapData = NULL;
+            m_ObtainOriginInLocalizedMap = NULL;
+            m_ObtainMap = NULL;
+            m_FlagMapImport = NULL;
+            m_EnablePassthrough = NULL;
+            m_PostRenderReset = NULL;
+            m_SetLeftRightEyeTransform = NULL;
+            m_SetTimeOffset = NULL;
+            FPlatformProcess::FreeDllHandle(v_dllHandle);
+            v_dllHandle = NULL;           
+        }
+}
+
+void UIntelRealsenseTracker::BeginPlay(){
+    Super::BeginPlay();
+    successful = importDLL();
+
+    if(successful){
+        m_InitializeTrackerObject(TrackerID);
+        m_SetSerialComPort(TrackerID,5);
+        m_StartTrackerThread(TrackerID,false);
+        UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started tracker!"));        
+    }else{
+        UE_LOG(LogTemp, Warning, TEXT("DLL loaded unsuccessfully"));        
+    }
+}
+void UIntelRealsenseTracker::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction){
+    Super::TickComponent(DeltaTime, TickType,ThisTickFunction);
+    if(successful){
+        float* currentPose = m_GetLatestPose(TrackerID);// this pose is a 7 value array, tx, ty, tz, qx, qy, qz, qw
+        //UE_LOG(LogTemp, Warning, TEXT("Obtained pose!"));          
+        //we need to translate the output coordinate system into an unreal readable format, then apply it to the attached transform
+    }
+
+}
+void UIntelRealsenseTracker::EndPlay(const EEndPlayReason::Type EndPlayReason){
+
+    if(successful){
+        UE_LOG(LogTemp, Warning, TEXT("Stopping trackers!"));                        
+        m_StopTrackers(TrackerID);
+        freeDLL();
+        UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));                                
+    }
+    Super::EndPlay(EndPlayReason);    
+}
+#pragma endregion Unload DLL

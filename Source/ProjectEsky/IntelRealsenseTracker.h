@@ -3,23 +3,28 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
+#include "Components/ActorComponent.h"
 #include "IntelRealsenseTracker.generated.h"
 
 /**
  * 
  */
-UCLASS()
-class PROJECTESKY_API UIntelRealsenseTracker : public UBlueprintFunctionLibrary
+UCLASS(ClassGroup=IntelTracker,meta = (BlueprintSpawnableComponent))
+class PROJECTESKY_API UIntelRealsenseTracker : public UActorComponent
 {
 	GENERATED_BODY()
 public: 
+	UIntelRealsenseTracker();
+	bool successful = false;
+	static bool importDLL();
 
 	//LLAPI  Hooks
-	UFUNCTION(BlueprintCallable, Category = "libProjectEskyLLAPIIntel")
-	static void OnInitialization();
-	UFUNCTION(BlueprintCallable, Category = "My DLL Library")
-    static bool importDLL( FString folder, FString name);
-	UFUNCTION(BlueprintCallable, Category = "libProjectEskyLLAPIIntel")
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
 	static void freeDLL();
+	UPROPERTY(EditAnywhere, Category="Intel Tracker Settings")
+	int TrackerID;
+protected:
+	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 };
