@@ -146,6 +146,7 @@ void UIntelRealsenseTracker::BeginPlay(){
         m_InitializeTrackerObject(TrackerID);
         m_SetSerialComPort(TrackerID,5);
         m_StartTrackerThread(TrackerID,false);
+        m_SetFilterEnabled(TrackerID,false);
         UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started tracker!"));        
     }else{
         UE_LOG(LogTemp, Warning, TEXT("DLL loaded unsuccessfully"));        
@@ -155,8 +156,20 @@ void UIntelRealsenseTracker::TickComponent(float DeltaTime, ELevelTick TickType,
     Super::TickComponent(DeltaTime, TickType,ThisTickFunction);
     if(successful){
         float* currentPose = m_GetLatestPose(TrackerID);// this pose is a 7 value array, tx, ty, tz, qx, qy, qz, qw
+  //      UE_LOG(LogTemp, Warning, TEXT("Translation: %s"), *FVector(currentPose[0],currentPose[1],currentPose[2]).ToString());
+//        UE_LOG(LogTemp, Warning, TEXT("Rotation: %s"), *FQuat(currentPose[3],currentPose[4],currentPose[5],currentPose[6]).ToString());
+        
         //UE_LOG(LogTemp, Warning, TEXT("Obtained pose!"));          
         //we need to translate the output coordinate system into an unreal readable format, then apply it to the attached transform
+        this->GetOwner()->SetActorLocationAndRotation(FVector(-currentPose[0]*100,
+        currentPose[2]*100,
+        currentPose[1]*100
+        ),
+        FQuat(-currentPose[3],
+        currentPose[5],
+        currentPose[4],
+        currentPose[6])
+        );        
     }
 
 }
