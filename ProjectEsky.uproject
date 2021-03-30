@@ -12,5 +12,20 @@
 				"Engine"
 			]
 		}
-	]
+	],
+	"Plugins": [
+		{
+			"Name": "TextureShare",
+			"Enabled": true
+		}
+	],
+	"PostBuildSteps":
+	{
+		"Win64": [
+			"echo Copying binaries from, to",
+			"echo $(ProjectDir)\\Plugins\\realsense2.dll",
+			"echo $(ProjectDir)\\Binaries\\Win64\\realsense2.dll",
+			"copy $(ProjectDir)\\Plugins\\realsense2.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\realsense2.dll"
+		]
+	}
 }
