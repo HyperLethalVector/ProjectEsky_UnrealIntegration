@@ -83,7 +83,6 @@ void UEskyNativeRenderer::BeginPlay()
 	successful = importDLL();
 	if(successful){
         UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started Renderer!"));  
-		rendererInstance = this;	
 //		FuncPtr fp = &DebugMessage;	
 //		m_SetDebugFunction(fp);
 //		m_StartWindowById(WindowID,width,height,true);      		
