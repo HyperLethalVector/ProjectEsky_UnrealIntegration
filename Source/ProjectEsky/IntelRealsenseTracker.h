@@ -9,8 +9,8 @@
 /**
  * 
  */
-UCLASS(ClassGroup=IntelTracker,meta = (BlueprintSpawnableComponent))
-class PROJECTESKY_API UIntelRealsenseTracker : public UActorComponent
+UCLASS(ClassGroup=IntelTracker,meta = (BlueprintSpawnableComponent)) 
+class UIntelRealsenseTracker : public UActorComponent
 {
 	GENERATED_BODY()
 public: 

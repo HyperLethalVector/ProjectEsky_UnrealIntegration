@@ -33,9 +33,10 @@
 		"Win64": [
 			"echo Copying Esky Binaries",
 			"copy $(ProjectDir)\\Plugins\\realsense2.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\realsense2.dll",
-			"copy $(ProjectDir)\\Plugins\\shaders.shader $(ProjectDir)\\Binaries\\$(TargetPlatform)\\shaders.shader",
+			"copy $(ProjectDir)\\Plugins\\shaders.shader $(ProjectDir)\\Binaries\\shaders.shader",
 			"copy $(ProjectDir)\\Plugins\\TextureShareSDK.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\TextureShareSDK.dll",
-			"copy $(ProjectDir)\\Plugins\\ProjectEskyLLAPIRenderer.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\ProjectEskyLLAPIRenderer.dll"
+			"copy $(ProjectDir)\\Plugins\\ProjectEskyLLAPIRenderer.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\ProjectEskyLLAPIRenderer.dll",
+			"copy $(ProjectDir)\\Plugins\\libProjectEskyLLAPIIntel.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\libProjectEskyLLAPIIntel.dll"			
 		]
 	}
 }

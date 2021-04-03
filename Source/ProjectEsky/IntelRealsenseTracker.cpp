@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "IntelRealsenseTracker.h"
-#include "ProjectEsky.h"
 
 #pragma region DLL callback function definitions
 typedef void(*FuncReceiveCameraImageCallbackWithID)(int instanceID, unsigned char* info, int lengthofarray, int width, int height, int pixelCount);
@@ -146,7 +145,6 @@ void UIntelRealsenseTracker::BeginPlay(){
         m_StartTrackerThread(TrackerID,false);
         m_SetFilterEnabled(TrackerID,false);
         UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started tracker!"));    
-        trackerInstance = this;    
     }else{
         UE_LOG(LogTemp, Warning, TEXT("Tracker DLL wasn't loaded"));        
     }
@@ -160,12 +158,13 @@ void UIntelRealsenseTracker::TickComponent(float DeltaTime, ELevelTick TickType,
         
         //UE_LOG(LogTemp, Warning, TEXT("Obtained pose!"));          
         //we need to translate the output coordinate system into an unreal readable format, then apply it to the attached transform
-        this->GetOwner()->SetActorLocationAndRotation(FVector(-currentPose[0]*100,
-        currentPose[2]*100,
+        this->GetOwner()->SetActorLocationAndRotation(FVector(currentPose[2]*100,
+        
+        currentPose[0]*100,
         currentPose[1]*100
         ),
-        FQuat(-currentPose[3],
-        currentPose[5],
+        FQuat(currentPose[5],
+        currentPose[3],
         currentPose[4],
         currentPose[6])
         );        
