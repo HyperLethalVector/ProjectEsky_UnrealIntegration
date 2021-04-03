@@ -76,4 +76,5 @@ DerivedDataCache/*
 #Don't ignore specific Esky DLLs
 !Plugins/libProjectEskyLLAPIIntel.dll
 !Plugins/ProjectEskyLLAPIRenderer.dll
-!Binaries/Win64/realsense2.dll
+!Plugins/realsense2.dll
+!Plugins/TextureShareSDK.dll

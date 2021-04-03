@@ -85,7 +85,7 @@ void UEskyNativeRenderer::BeginPlay()
         UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started Renderer!"));  
 //		FuncPtr fp = &DebugMessage;	
 //		m_SetDebugFunction(fp);
-//		m_StartWindowById(WindowID,width,height,true);      		
+		m_StartWindowById(WindowID,width,height,true);      		
 	}else{
         UE_LOG(LogTemp, Warning, TEXT("Renderer DLL wasn't loaded"));     
 	}
@@ -100,7 +100,7 @@ void UEskyNativeRenderer::EndPlay(const EEndPlayReason::Type EndPlayReason){
 	if(successful){
 		rendererInstance = NULL;				
         UE_LOG(LogTemp, Warning, TEXT("Stopping renderer!"));                        
-//        m_StopWindowById(WindowID);
+        m_StopWindowById(WindowID);
         freeDLL();
         UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));                                
     }
