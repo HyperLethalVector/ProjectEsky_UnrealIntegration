@@ -22,10 +22,11 @@
 	"PostBuildSteps":
 	{
 		"Win64": [
-			"echo Copying binaries from, to",
-			"echo $(ProjectDir)\\Plugins\\realsense2.dll",
-			"echo $(ProjectDir)\\Binaries\\Win64\\realsense2.dll",
-			"copy $(ProjectDir)\\Plugins\\realsense2.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\realsense2.dll"
+			"echo Copying Esky Binaries",
+			"copy $(ProjectDir)\\Plugins\\realsense2.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\realsense2.dll",
+			"copy $(ProjectDir)\\Plugins\\shaders.shader $(ProjectDir)\\Binaries\\$(TargetPlatform)\\shaders.shader",			
+			"copy $(ProjectDir)\\Plugins\\TextureShareSDK.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\TextureShareSDK.dll",
+			"copy $(ProjectDir)\\Plugins\\ProjectEskyLLAPIRenderer.dll $(ProjectDir)\\Binaries\\$(TargetPlatform)\\ProjectEskyLLAPIRenderer.dll"								
 		]
 	}
 }

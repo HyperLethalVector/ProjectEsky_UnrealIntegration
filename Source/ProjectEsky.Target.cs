@@ -21,7 +21,6 @@ public class ProjectEskyTarget : TargetRules
 
 		ExtraModuleNames.AddRange( new string[] { "ProjectEsky" } );
 //		File.Copy(RealsenseBinaryPath,OutputPlayPath);
-		Console.WriteLine(ProjectFile);
 		
 	}
 }

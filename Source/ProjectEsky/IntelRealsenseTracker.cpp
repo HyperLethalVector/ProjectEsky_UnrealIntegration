@@ -59,21 +59,18 @@ _SetLeftRightEyeTransform m_SetLeftRightEyeTransform;
 _SetTimeOffset m_SetTimeOffset;
 #pragma endregion
 void *v_dllHandle;
-
+UIntelRealsenseTracker* trackerInstance;
 #pragma region Load DLL
 
 // Method to import a DLL.
 bool UIntelRealsenseTracker::importDLL()
 {
     FString filePath = *FPaths::ProjectPluginsDir() + FString("libProjectEskyLLAPIIntel.dll");
-    UE_LOG(LogTemp, Warning, TEXT("Location of plugin: %s"),*filePath);   
     if (FPaths::FileExists(filePath))
     {
-        UE_LOG(LogTemp, Warning, TEXT("File existed!"));           
         v_dllHandle = FPlatformProcess::GetDllHandle(*filePath); // Retrieve the DLL.
         if (v_dllHandle != NULL)
         {
-            UE_LOG(LogTemp, Warning, TEXT("Got file handle!")); 
             //import all the functions
             m_RegisterDeltaPoseUpdate = (_RegisterDeltaPoseUpdate)FPlatformProcess::GetDllExport(v_dllHandle, *FString("RegisterDeltaPoseUpdate"));
             m_HookDeviceToIntel = (_HookDeviceToIntel)FPlatformProcess::GetDllExport(v_dllHandle, *FString("HookDeviceToIntel"));
@@ -107,6 +104,7 @@ bool UIntelRealsenseTracker::importDLL()
 #pragma region Unload DLL
 UIntelRealsenseTracker::UIntelRealsenseTracker(){
     PrimaryComponentTick.bCanEverTick = true;
+ //   setInstance(*this);
 }
 void UIntelRealsenseTracker::freeDLL(){
     if (v_dllHandle != NULL)
@@ -147,9 +145,10 @@ void UIntelRealsenseTracker::BeginPlay(){
         m_SetSerialComPort(TrackerID,5);
         m_StartTrackerThread(TrackerID,false);
         m_SetFilterEnabled(TrackerID,false);
-        UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started tracker!"));        
+        UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started tracker!"));    
+        trackerInstance = this;    
     }else{
-        UE_LOG(LogTemp, Warning, TEXT("DLL loaded unsuccessfully"));        
+        UE_LOG(LogTemp, Warning, TEXT("Tracker DLL wasn't loaded"));        
     }
 }
 void UIntelRealsenseTracker::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction){
@@ -177,9 +176,11 @@ void UIntelRealsenseTracker::EndPlay(const EEndPlayReason::Type EndPlayReason){
 
     if(successful){
         UE_LOG(LogTemp, Warning, TEXT("Stopping trackers!"));                        
+        trackerInstance = NULL;                                
         m_StopTrackers(TrackerID);
         freeDLL();
-        UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));                                
+        UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));        
+
     }
     Super::EndPlay(EndPlayReason);    
 }
