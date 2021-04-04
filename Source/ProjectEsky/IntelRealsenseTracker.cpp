@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "IntelRealsenseTracker.h"
 
+#include "EskyNativeRenderer.h"
 #pragma region DLL callback function definitions
 typedef void(*FuncReceiveCameraImageCallbackWithID)(int instanceID, unsigned char* info, int lengthofarray, int width, int height, int pixelCount);
 typedef void(*LocalizationEventCallback)(int trackerID, int LocalizationDelegate);
@@ -56,9 +57,12 @@ _EnablePassthrough m_EnablePassthrough;
 _PostRenderReset m_PostRenderReset;
 _SetLeftRightEyeTransform m_SetLeftRightEyeTransform;
 _SetTimeOffset m_SetTimeOffset;
+
+UIntelRealsenseTracker* intelRealsenseInstance;
 #pragma endregion
 void *v_dllHandle;
-UIntelRealsenseTracker* trackerInstance;
+
+
 #pragma region Load DLL
 
 // Method to import a DLL.
@@ -71,6 +75,7 @@ bool UIntelRealsenseTracker::importDLL()
         if (v_dllHandle != NULL)
         {
             //import all the functions
+
             m_RegisterDeltaPoseUpdate = (_RegisterDeltaPoseUpdate)FPlatformProcess::GetDllExport(v_dllHandle, *FString("RegisterDeltaPoseUpdate"));
             m_HookDeviceToIntel = (_HookDeviceToIntel)FPlatformProcess::GetDllExport(v_dllHandle, *FString("HookDeviceToIntel"));
             m_SetFilterEnabled = (_SetFilterEnabled)FPlatformProcess::GetDllExport(v_dllHandle, *FString("SetFilterEnabled"));
@@ -109,6 +114,7 @@ void UIntelRealsenseTracker::freeDLL(){
     if (v_dllHandle != NULL)
         {
             //import all the functions
+            intelRealsenseInstance = NULL;
             m_RegisterDeltaPoseUpdate = NULL;
             m_HookDeviceToIntel = NULL;
             m_SetFilterEnabled = NULL;
@@ -137,13 +143,20 @@ void UIntelRealsenseTracker::freeDLL(){
 
 void UIntelRealsenseTracker::BeginPlay(){
     Super::BeginPlay();
+    
+}
+void UIntelRealsenseTracker::SetAttachedRenderer(UEskyNativeRenderer* rendererToAttach){       
+    UE_LOG(LogTemp, Warning, TEXT("Attached the UEskyNativeRenderer!"));  
     successful = importDLL();
-
+    myAttachedRenderer = rendererToAttach;
+    intelRealsenseInstance = this;
     if(successful){
         m_InitializeTrackerObject(TrackerID);
         m_SetSerialComPort(TrackerID,5);
         m_StartTrackerThread(TrackerID,false);
         m_SetFilterEnabled(TrackerID,false);
+        DeltaPoseUpdateCallback dpuc = &UEskyNativeRenderer::SetDeltas;
+        m_RegisterDeltaPoseUpdate(TrackerID,dpuc);
         UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started tracker!"));    
     }else{
         UE_LOG(LogTemp, Warning, TEXT("Tracker DLL wasn't loaded"));        
@@ -175,12 +188,22 @@ void UIntelRealsenseTracker::EndPlay(const EEndPlayReason::Type EndPlayReason){
 
     if(successful){
         UE_LOG(LogTemp, Warning, TEXT("Stopping trackers!"));                        
-        trackerInstance = NULL;                                
+       // trackerInstance = NULL;                                
         m_StopTrackers(TrackerID);
+        m_RegisterDeltaPoseUpdate(TrackerID,NULL);
         freeDLL();
         UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));        
 
     }
     Super::EndPlay(EndPlayReason);    
+}
+void UIntelRealsenseTracker::CallRenderedFrameCallbackLocally(){
+    m_PostRenderReset(TrackerID);
+}
+void UIntelRealsenseTracker::RenderedFrameCallback(){
+    if(intelRealsenseInstance != nullptr){
+        UE_LOG(LogTemp, Warning, TEXT("Renderered a frame"));    
+        intelRealsenseInstance->CallRenderedFrameCallbackLocally();
+    }
 }
 #pragma endregion Unload DLL

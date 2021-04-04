@@ -2,7 +2,14 @@
 #include "EskyNativeRenderer.h"
 #include <string>
 #include <locale>
+#include "IntelRealsenseTracker.h"
+
+void DebugMessage(const wchar_t* message){
+	UE_LOG(LogTemp, Warning, TEXT("Renderer: %s"),message);
+}
 #pragma region DLL Specific functions
+typedef void(*OnRenderedFrameCallback)();
+typedef void(*_SetOnReceivedFrameCallback)(int windowID, OnRenderedFrameCallback callback);
 typedef void(*_StartWindowById)(int windowID, int width,  int height, bool borderless);
 typedef void(*_StopWindowById)(int windowID);
 typedef void(*_SetWindowRectById)(int windowID, int left, int top, int width, int height);
@@ -28,14 +35,22 @@ _SetBrightness m_SetBrightness;
 _SetDebugFunction m_SetDebugFunction;
 _FreeDebugFunction m_FreeDebugFunction;
 _SetColorFormat m_SetColorFormat;
+_SetOnReceivedFrameCallback m_SetOnReceivedFrameCallback;
 #pragma endregion
-static void *v_dllHandle_renderer;
+void *v_dllHandle_renderer;
 FuncPtr ptr;
-UEskyNativeRenderer* rendererInstance;
 bool isDone = false;
-void DebugMessage(const wchar_t* message){
-	UE_LOG(LogTemp, Warning, TEXT("Renderer: %s"),message);
-}
+
+UEskyNativeRenderer* rendererInstance;
+void UEskyNativeRenderer::SetDeltas(int ID, float* leftEye, float* rightEye){
+
+	if(rendererInstance != nullptr){
+		if(rendererInstance->successful){		
+				rendererInstance->SetDeltasLocal(ID,leftEye,rightEye);
+		}
+	}
+//	UEskyNativeRenderer* rendererInstance;
+};
 bool UEskyNativeRenderer::importDLL()
 {
     FString filePath = *FPaths::ProjectPluginsDir() + FString("ProjectEskyLLAPIRenderer.dll");
@@ -43,6 +58,7 @@ bool UEskyNativeRenderer::importDLL()
     if (FPaths::FileExists(filePath))
     {         
 		if(!isDone){
+
 			isDone = true;
 			v_dllHandle_renderer = FPlatformProcess::GetDllHandle(*filePath); // Retrieve the DLL.
 			if (v_dllHandle_renderer != NULL)
@@ -58,6 +74,7 @@ bool UEskyNativeRenderer::importDLL()
 				m_SetDebugFunction = (_SetDebugFunction)FPlatformProcess::GetDllExport(v_dllHandle_renderer, *FString("SetDebugFunction"));
 				m_FreeDebugFunction =(_FreeDebugFunction)FPlatformProcess::GetDllExport(v_dllHandle_renderer, *FString("FreeDebugFunction"));
 				m_SetColorFormat = (_SetColorFormat)FPlatformProcess::GetDllExport(v_dllHandle_renderer, *FString("SetColorFormat"));
+				m_SetOnReceivedFrameCallback = (_SetOnReceivedFrameCallback)FPlatformProcess::GetDllExport(v_dllHandle_renderer, *FString("SetOnReceivedFrameCallback"));
 				return true;
 			}
 		}
@@ -78,7 +95,9 @@ void UEskyNativeRenderer::freeDLL(){
 			m_SetDebugFunction = NULL;	
 			m_FreeDebugFunction = NULL;			
 			m_SetColorFormat = NULL;
+			m_SetOnReceivedFrameCallback = NULL;
 			v_dllHandle_renderer = NULL;
+
 			FPlatformProcess::FreeDllHandle(v_dllHandle_renderer);
 	}
 }
@@ -91,26 +110,14 @@ UEskyNativeRenderer::UEskyNativeRenderer()
 
 	// ...
 }
-
+void UEskyNativeRenderer::SetDeltasLocal(int iD, float* leftEye, float* rightEye){
+	m_SetDeltas(iD,leftEye,rightEye);
+}
 // Called when the game starts
 void UEskyNativeRenderer::BeginPlay()
 {
 	Super::BeginPlay();
-	successful = importDLL();
-	if(successful){
-        UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started Renderer!"));  
-		FuncPtr fp = &DebugMessage;	
-		m_SetDebugFunction(fp);
-
-		m_StartWindowById(WindowID,width,height,true);      	
-		m_SetColorFormat(0);
-		m_InitializeGraphics(WindowID);		
-		m_SetRequiredValuesById(WindowID,LeftUVToRectX,LeftUVToRectY,RightUVToRectX,RightUVToRectY,LeftEyeProjectionMatrix,RightEyeProjectionMatrix,LeftEyeInvProjectionMatrix,RightEyeInvProjectionMatrix,LeftOffset,RightOffset,eyeBorders);			
-		m_SetWindowRectById(WindowID,xPlacement,yPlacement,width,height);
-
-	}else{
-        UE_LOG(LogTemp, Warning, TEXT("Renderer DLL wasn't loaded"));     
-	}
+	
 
 //	FD3D11DynamicRHI* D3D11RHIPtr = Cast<FD3D11DynamicRHI>(GDynamicRHI);
 //	ID3D11Device* DevicePtr = D3D11RHIPtr->GetDevice();
@@ -137,5 +144,28 @@ void UEskyNativeRenderer::TickComponent(float DeltaTime, ELevelTick TickType, FA
 
 	}
 	// ...
+}
+
+void UEskyNativeRenderer::SetAttachedTracker(UIntelRealsenseTracker* trackerToAttach){       
+    UE_LOG(LogTemp, Warning, TEXT("Attached the Tracker!"));  
+    successful = importDLL();
+    myAttachedTracker = trackerToAttach;
+	if(successful){
+        UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started Renderer!"));  
+		FuncPtr fp = &DebugMessage;	
+		m_SetDebugFunction(fp);
+		rendererInstance = this;
+		m_StartWindowById(WindowID,width,height,true);      	
+		m_SetColorFormat(0);
+		OnRenderedFrameCallback orfc = &UIntelRealsenseTracker::RenderedFrameCallback;
+        m_SetOnReceivedFrameCallback(WindowID,orfc);
+		m_SetEnableFlagWarping(WindowID,useTemporalReprojection);
+		m_InitializeGraphics(WindowID);		
+		m_SetRequiredValuesById(WindowID,LeftUVToRectX,LeftUVToRectY,RightUVToRectX,RightUVToRectY,LeftEyeProjectionMatrix,RightEyeProjectionMatrix,LeftEyeInvProjectionMatrix,RightEyeInvProjectionMatrix,LeftOffset,RightOffset,eyeBorders);			
+		m_SetWindowRectById(WindowID,xPlacement,yPlacement,width,height);
+
+	}else{
+        UE_LOG(LogTemp, Warning, TEXT("Renderer DLL wasn't loaded"));     
+	}
 }
 

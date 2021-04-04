@@ -3,8 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "EskyNativeRenderer.generated.h"
+
+
 UCLASS( ClassGroup=(ProjectEsky), meta=(BlueprintSpawnableComponent))
 class UEskyNativeRenderer : public UActorComponent
 {
@@ -24,7 +27,9 @@ public:
 	int xPlacement; 
 	UPROPERTY(EditAnywhere, Category="Esky Renderer Settings")	 
 	int yPlacement;
-		
+        UPROPERTY(EditAnywhere, Category="Esky Renderer Settings")	 
+	bool useTemporalReprojection;
+        
 	float* LeftEyeProjectionMatrix = new float[]{1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0};
 	float* RightEyeProjectionMatrix = new float[]{1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0};	
 	float* LeftEyeInvProjectionMatrix = new float[]{0.7780085,0,0,0,0,0.7002077,0,0,0,0,0,-1,0,0,-4.9995,5.005};
@@ -32,7 +37,9 @@ public:
 	float* LeftOffset = new float[]{0.0,0.0};
 	float* RightOffset = new float[]{0.0,0.0};
 	float* eyeBorders = new float[]{0.0,1.0,0.0,1.0,.0,1.0,0.0,1.0};
-
+       
+        UIntelRealsenseTracker* myAttachedTracker;
+	
 	float* LeftUVToRectX = new float[] {-0.3844103217124939,
         0.9711242318153381,
         -0.2508922219276428,
@@ -101,16 +108,17 @@ public:
         0.5733417272567749,
         -0.7395226955413818};
 
-	
-	static bool importDLL();
+        static bool importDLL();
 	static void freeDLL();  
+        void SetDeltasLocal(int iD, float* leftEye, float* rightEye);
+        static void SetDeltas(int ID, float* leftEye, float* rightEye);
+        UFUNCTION(BlueprintCallable,Category="Esky Renderer Settings") 
+        void SetAttachedTracker(UIntelRealsenseTracker* trackerToAttach);
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 public:	
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-		
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;		
 };
