@@ -37,7 +37,7 @@ public:
 	float* LeftOffset = new float[]{0.0,0.0};
 	float* RightOffset = new float[]{0.0,0.0};
 	float* eyeBorders = new float[]{0.0,1.0,0.0,1.0,.0,1.0,0.0,1.0};
-       
+        
         UIntelRealsenseTracker* myAttachedTracker;
 	
 	float* LeftUVToRectX = new float[] {-0.3844103217124939,

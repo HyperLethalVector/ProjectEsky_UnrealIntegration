@@ -19,6 +19,7 @@ typedef void(*_SetEnableFlagWarping)(int windowID, bool enabled);
 typedef void(*_SetRequiredValuesById)(int windowID, float* leftUvToRectX, float* leftUvToRectY, float* rightUvToRectX, float* rightUvToRectY, float* CameraMatrixLeft, float* CameraMatrixRight, float* InvCameraMatrixLeft, float* InvCameraMatrixRight, float* leftOffset, float* rightOffset, float* eyeBorders);
 typedef void(*_SetColorFormat)(int colorFormat);
 typedef void(*_SetBrightness)(int windowID, float brightness);
+
 typedef void (*FuncPtr) (const wchar_t *);
 typedef void(*_SetDebugFunction)(void *fp);
 typedef void(*_FreeDebugFunction)();

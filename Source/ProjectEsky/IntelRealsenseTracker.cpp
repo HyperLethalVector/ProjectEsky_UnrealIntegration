@@ -157,6 +157,7 @@ void UIntelRealsenseTracker::SetAttachedRenderer(UEskyNativeRenderer* rendererTo
         m_SetFilterEnabled(TrackerID,false);
         DeltaPoseUpdateCallback dpuc = &UEskyNativeRenderer::SetDeltas;
         m_RegisterDeltaPoseUpdate(TrackerID,dpuc);
+        m_SetLeftRightEyeTransform(TrackerID,leftEyeTransformFromTracker,rightEyeTransformFromTracker);
         UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started tracker!"));    
     }else{
         UE_LOG(LogTemp, Warning, TEXT("Tracker DLL wasn't loaded"));        
