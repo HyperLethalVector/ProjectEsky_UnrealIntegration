@@ -1,0 +1,16 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.pdb
+*.DS_Store
+
+#folders
+Intermediate
+Binaries/Win64/UE4Editor*.modules
+Binaries/Win64/UE4-*.dll
+Binaries/Win64/UE4-*.lib
+Binaries/Win64/UE4Editor*.dll
+Binaries/Win64/UE4Editor*.dll
+*.a
