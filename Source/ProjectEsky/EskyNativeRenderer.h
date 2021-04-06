@@ -30,17 +30,17 @@ public:
         UPROPERTY(EditAnywhere, Category="Esky Renderer Settings")	 
 	bool useTemporalReprojection;
         
-	float* LeftEyeProjectionMatrix = new float[]{1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0};
-	float* RightEyeProjectionMatrix = new float[]{1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0};	
-	float* LeftEyeInvProjectionMatrix = new float[]{0.7780085,0,0,0,0,0.7002077,0,0,0,0,0,-1,0,0,-4.9995,5.005};
-	float* RightEyeInvProjectionMatrix = new float[]{0.7780085,0,0,0,0,0.7002077,0,0,0,0,0,-1,0,0,-4.9995,5.005};
-	float* LeftOffset = new float[]{0.0,0.0};
-	float* RightOffset = new float[]{0.0,0.0};
-	float* eyeBorders = new float[]{0.0,1.0,0.0,1.0,.0,1.0,0.0,1.0};
+	float* LeftEyeProjectionMatrix = new float[16]{1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0};
+	float* RightEyeProjectionMatrix = new float[16]{1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0};
+	float* LeftEyeInvProjectionMatrix = new float[16]{0.7780085,0,0,0,0,0.7002077,0,0,0,0,0,-1,0,0,-4.9995,5.005};
+	float* RightEyeInvProjectionMatrix = new float[16]{0.7780085,0,0,0,0,0.7002077,0,0,0,0,0,-1,0,0,-4.9995,5.005};
+	float* LeftOffset = new float[4]{0.0,0.0};
+	float* RightOffset = new float[4]{0.0,0.0};
+	float* eyeBorders = new float[8]{0.0,1.0,0.0,1.0,.0,1.0,0.0,1.0};
         
         UIntelRealsenseTracker* myAttachedTracker;
 	
-	float* LeftUVToRectX = new float[] {-0.3844103217124939,
+	float* LeftUVToRectX = new float[16] {-0.3844103217124939,
         0.9711242318153381,
         -0.2508922219276428,
         0.2063561975955963,
@@ -57,7 +57,7 @@ public:
         0.9610205292701721,
         -0.40973442792892458};
 	
-	float* LeftUVToRectY = new float[] { -0.3913276493549347,
+	float* LeftUVToRectY = new float[16] { -0.3913276493549347,
         0.13756594061851502,
         -0.374609112739563,
         -0.026859400793910028,
@@ -74,7 +74,7 @@ public:
         1.8977105617523194,
         -1.4114274978637696};
 	
-	float* RightUVToRectX = new float[] {-0.3506585359573364,
+	float* RightUVToRectX = new float[16] {-0.3506585359573364,
         0.9476522207260132,
         0.17013339698314668,
         0.22676172852516175,
@@ -91,7 +91,7 @@ public:
         -13.467972755432129,
         7.434933662414551};
 		 
-	float* RightUVToRectY = new float[] {-0.31777408719062807,
+	float* RightUVToRectY = new float[16] {-0.31777408719062807,
         -0.01822761259973049,
         -0.030633892863988878,
         0.27896520495414736,

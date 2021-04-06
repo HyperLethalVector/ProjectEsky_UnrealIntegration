@@ -26,8 +26,8 @@ public:
 	int TrackerID;//UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	UFUNCTION(BlueprintCallable,Category="Intel Tracker Settings")
 	void SetAttachedRenderer(UEskyNativeRenderer* rendererToAttach);
-	float* leftEyeTransformFromTracker = new float[]{1,0,0,0,0,0.9092361,-0.4162807,0,0,0.4162807,0.9092361,0,-0.0284,0.06417969,0.06949941,1};
-	float* rightEyeTransformFromTracker = new float[]{1,0,0,0,0,0.9092361,-0.4162807,0,0,0.4162807,0.9092361,0,0.0356,0.06417969,0.06949941,1};
+	float* leftEyeTransformFromTracker = new float[16]{1,0,0,0,0,0.9092361,-0.4162807,0,0,0.4162807,0.9092361,0,-0.0284,0.06417969,0.06949941,1};
+	float* rightEyeTransformFromTracker = new float[16]{1,0,0,0,0,0.9092361,-0.4162807,0,0,0.4162807,0.9092361,0,0.0356,0.06417969,0.06949941,1};
 	static void RenderedFrameCallback();
 	void CallRenderedFrameCallbackLocally();
 protected:
