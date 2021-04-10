@@ -5,7 +5,7 @@
 			"name": "ProjectEsky (Debug)",
 			"request": "launch",
 			"preLaunchTask": "ProjectEsky Win64 Debug Build",
-			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"program": "C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\Binaries\\Win64\\UE4-Win64-Debug.exe",
 			"args": [
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
@@ -18,7 +18,7 @@
 			"name": "ProjectEsky (DebugGame)",
 			"request": "launch",
 			"preLaunchTask": "ProjectEsky Win64 DebugGame Build",
-			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"program": "C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
 			"args": [
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
@@ -31,7 +31,7 @@
 			"name": "ProjectEsky (Development)",
 			"request": "launch",
 			"preLaunchTask": "ProjectEsky Win64 Development Build",
-			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4.exe",
+			"program": "C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\Binaries\\Win64\\UE4.exe",
 			"args": [
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
@@ -44,7 +44,7 @@
 			"name": "ProjectEsky (Shipping)",
 			"request": "launch",
 			"preLaunchTask": "ProjectEsky Win64 Shipping Build",
-			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"program": "C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
 			"args": [
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
@@ -57,7 +57,7 @@
 			"name": "ProjectEsky (Test)",
 			"request": "launch",
 			"preLaunchTask": "ProjectEsky Win64 Test Build",
-			"program": "C:\\UnrealProjects\\ProjectEsky\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"program": "C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\Binaries\\Win64\\UE4-Win64-Test.exe",
 			"args": [
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
@@ -72,7 +72,7 @@
 			"preLaunchTask": "ProjectEskyEditor Win64 Debug Build",
 			"program": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
 			"args": [
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject"
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject"
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
 			"stopAtEntry": false,
@@ -86,7 +86,7 @@
 			"preLaunchTask": "ProjectEskyEditor Win64 DebugGame Build",
 			"program": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
 			"args": [
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject"
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject"
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
 			"stopAtEntry": false,
@@ -100,7 +100,7 @@
 			"preLaunchTask": "ProjectEskyEditor Win64 Development Build",
 			"program": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Binaries\\Win64\\UE4Editor.exe",
 			"args": [
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject"
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject"
 			],
 			"cwd": "C:\\Program Files\\Epic Games\\UE_4.26",
 			"stopAtEntry": false,
@@ -117,7 +117,7 @@
 			"args": [
 				"-projectfiles",
 				"-vscode",
-				"-project=\"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject\"",
+				"-project=\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject\"",
 				"-game",
 				"-engine"
 			],

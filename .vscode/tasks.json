@@ -9,7 +9,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -26,7 +26,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -46,7 +46,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -63,7 +63,7 @@
 				"ProjectEsky",
 				"Win32",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -80,7 +80,7 @@
 				"ProjectEsky",
 				"Win32",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -100,7 +100,7 @@
 				"ProjectEsky",
 				"Win32",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -117,7 +117,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -134,7 +134,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -154,7 +154,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -171,7 +171,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Shipping",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -188,7 +188,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Shipping",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -208,7 +208,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Shipping",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -225,7 +225,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Test",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -242,7 +242,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Test",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -262,7 +262,7 @@
 				"ProjectEsky",
 				"Win32",
 				"Test",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -279,7 +279,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -296,7 +296,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -316,7 +316,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -333,7 +333,7 @@
 				"ProjectEsky",
 				"Win64",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -350,7 +350,7 @@
 				"ProjectEsky",
 				"Win64",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -370,7 +370,7 @@
 				"ProjectEsky",
 				"Win64",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -387,7 +387,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -404,7 +404,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -424,7 +424,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -441,7 +441,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Shipping",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -458,7 +458,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Shipping",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -478,7 +478,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Shipping",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -495,7 +495,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Test",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -512,7 +512,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Test",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -532,7 +532,7 @@
 				"ProjectEsky",
 				"Win64",
 				"Test",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -549,7 +549,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -566,7 +566,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -586,7 +586,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"Debug",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -603,7 +603,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -620,7 +620,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -640,7 +640,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"DebugGame",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -657,7 +657,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -674,7 +674,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",
@@ -694,7 +694,7 @@
 				"ProjectEskyEditor",
 				"Win64",
 				"Development",
-				"C:\\UnrealProjects\\ProjectEsky\\ProjectEsky.uproject",
+				"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\ProjectEsky.uproject",
 				"-waitmutex"
 			],
 			"problemMatcher": "$msCompile",

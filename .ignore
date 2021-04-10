@@ -1,8 +1,8 @@
 .git
-.vs
 .vscode
 Content
 DerivedDataCache
 Intermediate
 Saved
 Script
+Plugins/LeapUnreal-3.6.0/Content
