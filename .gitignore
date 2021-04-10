@@ -85,5 +85,5 @@ DerivedDataCache/*
 !Plugins/LeapUnreal-3.6.0/Binaries/Win32/LeapC.dll
 !Plugins/LeapUnreal-3.6.0/Source/ThirdParty/LeapSDK/Lib/Android/arm64-v8a/libLeapC.so
 !Plugins/LeapUnreal-3.6.0/Source/ThirdParty/LeapSDK/Lib/Android/armeabi-v7a/libLeapC.so
-!Plugins/LeapUnreal-3.6.0/Source/ThirdParty/LeapSDK/Lib/Android/Win32/LeapC.lib
-!Plugins/LeapUnreal-3.6.0/Source/ThirdParty/LeapSDK/Lib/Android/Win64/LeapC.lib
+!Plugins/LeapUnreal-3.6.0/Source/ThirdParty/LeapSDK/Lib/Win32/LeapC.lib
+!Plugins/LeapUnreal-3.6.0/Source/ThirdParty/LeapSDK/Lib/Win64/LeapC.lib
