@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
+#include "EskyDataContainer.h"
 #include "EskyNativeRenderer.generated.h"
 
 
@@ -108,12 +109,15 @@ public:
         0.5733417272567749,
         -0.7395226955413818};
 
-        static bool importDLL();
-	static void freeDLL();  
+        void *v_dllHandle_renderer;
+        bool importDLL();
+	void freeDLL();  
         void SetDeltasLocal(int iD, float* leftEye, float* rightEye);
         static void SetDeltas(int ID, float* leftEye, float* rightEye);
         UFUNCTION(BlueprintCallable,Category="Esky Renderer Settings") 
         void SetAttachedTracker(UIntelRealsenseTracker* trackerToAttach);
+        UFUNCTION(BlueprintCallable,Category="Esky Config Settings")
+	void ApplySettings(UEskyDataContainer* dataContainer);
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -121,4 +125,5 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;		
+        
 };

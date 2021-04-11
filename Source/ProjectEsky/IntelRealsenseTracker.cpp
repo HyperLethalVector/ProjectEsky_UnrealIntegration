@@ -60,7 +60,7 @@ _SetTimeOffset m_SetTimeOffset;
 
 UIntelRealsenseTracker* intelRealsenseInstance;
 #pragma endregion
-void *v_dllHandle;
+static void *v_dllHandle;
 
 
 #pragma region Load DLL
@@ -203,8 +203,15 @@ void UIntelRealsenseTracker::CallRenderedFrameCallbackLocally(){
 }
 void UIntelRealsenseTracker::RenderedFrameCallback(){
     if(intelRealsenseInstance != nullptr){
-        UE_LOG(LogTemp, Warning, TEXT("Renderered a frame"));    
+//        UE_LOG(LogTemp, Warning, TEXT("Renderered a frame"));    
         intelRealsenseInstance->CallRenderedFrameCallbackLocally();
+    }
+}
+
+void UIntelRealsenseTracker::ApplySettings(UEskyDataContainer* dataContainer){
+    for(int i = 0; i < 16; i++){
+         leftEyeTransformFromTracker[i] = dataContainer->myConfig.leftEyeTransformFromTracker[i];
+         rightEyeTransformFromTracker[i] = dataContainer->myConfig.rightEyeTransformFromTracker[i];         
     }
 }
 #pragma endregion Unload DLL

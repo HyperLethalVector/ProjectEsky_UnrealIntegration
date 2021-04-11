@@ -38,10 +38,9 @@ _FreeDebugFunction m_FreeDebugFunction;
 _SetColorFormat m_SetColorFormat;
 _SetOnReceivedFrameCallback m_SetOnReceivedFrameCallback;
 #pragma endregion
-void *v_dllHandle_renderer;
 FuncPtr ptr;
 bool isDone = false;
-
+static void *v_dllHandle_renderer;
 UEskyNativeRenderer* rendererInstance;
 void UEskyNativeRenderer::SetDeltas(int ID, float* leftEye, float* rightEye){
 
@@ -150,11 +149,12 @@ void UEskyNativeRenderer::TickComponent(float DeltaTime, ELevelTick TickType, FA
 void UEskyNativeRenderer::SetAttachedTracker(UIntelRealsenseTracker* trackerToAttach){       
     UE_LOG(LogTemp, Warning, TEXT("Attached the Tracker!"));  
     successful = importDLL();
+
     myAttachedTracker = trackerToAttach;
 	if(successful){
         UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started Renderer!"));  
-		FuncPtr fp = &DebugMessage;	
-		m_SetDebugFunction(fp);
+//		FuncPtr fp = &DebugMessage;	
+//		m_SetDebugFunction(fp);
 		rendererInstance = this;
 		m_StartWindowById(WindowID,width,height,true);      	
 		m_SetColorFormat(0);
@@ -169,4 +169,16 @@ void UEskyNativeRenderer::SetAttachedTracker(UIntelRealsenseTracker* trackerToAt
         UE_LOG(LogTemp, Warning, TEXT("Renderer DLL wasn't loaded"));     
 	}
 }
+void UEskyNativeRenderer::ApplySettings(UEskyDataContainer* dataContainer){
+    for(int i = 0; i < 16; i++){
+         LeftUVToRectX[i] = dataContainer->myConfig.LeftUVToRectX[i];
+         LeftUVToRectY[i] = dataContainer->myConfig.LeftUVToRectY[i];         
 
+         RightUVToRectX[i] = dataContainer->myConfig.RightUVToRectX[i];
+         RightUVToRectY[i] = dataContainer->myConfig.RightUVToRectY[i];         
+		 width = dataContainer->myConfig.WindowWidth;
+		 height = dataContainer->myConfig.WindowHeight;
+		 xPlacement = dataContainer->myConfig.WindowOffsetX;
+		 yPlacement = dataContainer->myConfig.WindowOffsetY;
+    }
+}
