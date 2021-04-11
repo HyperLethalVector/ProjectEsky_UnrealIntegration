@@ -14,3 +14,9 @@ Binaries/Win64/UE4-*.lib
 Binaries/Win64/UE4Editor*.dll
 Binaries/Win64/UE4Editor*.dll
 *.a
+!Binaries/Win64/LeapC.dll
+!Binaries/Win64/LeapC.dll
+!Source/ThirdParty/LeapSDK/Lib/Android/arm64-v8a/libLeapC.so
+!Source/ThirdParty/LeapSDK/Lib/Android/armeabi-v7a/libLeapC.so
+!Source/ThirdParty/LeapSDK/Lib/Win32/LeapC.lib
+!Source/ThirdParty/LeapSDK/Lib/Win64/LeapC.lib
