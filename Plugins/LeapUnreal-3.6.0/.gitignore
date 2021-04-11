@@ -14,6 +14,7 @@ Binaries/Win64/UE4-*.lib
 Binaries/Win64/UE4Editor*.dll
 Binaries/Win64/UE4Editor*.dll
 *.a
+#Don't ignore binaries
 !Binaries/Win64/LeapC.dll
 !Binaries/Win64/LeapC.dll
 !Source/ThirdParty/LeapSDK/Lib/Android/arm64-v8a/libLeapC.so
