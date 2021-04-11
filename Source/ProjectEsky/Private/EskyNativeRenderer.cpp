@@ -21,7 +21,7 @@ typedef void(*_SetColorFormat)(int colorFormat);
 typedef void(*_SetBrightness)(int windowID, float brightness);
 
 typedef void (*FuncPtr) (const wchar_t *);
-typedef void(*_SetDebugFunction)(void *fp);
+typedef void(*_SetDebugFunction)(int WindowID, void *fp);
 typedef void(*_FreeDebugFunction)();
 #pragma endregion
 #pragma region DLL function storage variables
@@ -96,9 +96,9 @@ void UEskyNativeRenderer::freeDLL(){
 			m_FreeDebugFunction = NULL;			
 			m_SetColorFormat = NULL;
 			m_SetOnReceivedFrameCallback = NULL;
+			FPlatformProcess::FreeDllHandle(v_dllHandle_renderer);			
 			v_dllHandle_renderer = NULL;
 
-			FPlatformProcess::FreeDllHandle(v_dllHandle_renderer);
 	}
 }
 // Sets default values for this component's properties
@@ -130,7 +130,9 @@ void UEskyNativeRenderer::EndPlay(const EEndPlayReason::Type EndPlayReason){
 		rendererInstance = NULL;	
 		UE_LOG(LogTemp, Warning, TEXT("Stopping renderer!"));                        			
 		m_StopWindowById(WindowID);			
-		UE_LOG(LogTemp, Warning, TEXT("Freeing the DLL!"));                        
+		UE_LOG(LogTemp, Warning, TEXT("Freeing the DLL!"));               
+		m_SetOnReceivedFrameCallback(WindowID,nullptr);
+		m_SetDebugFunction(WindowID,nullptr);  
 		freeDLL();
 		UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));                                			
     }
@@ -152,16 +154,15 @@ void UEskyNativeRenderer::SetAttachedTracker(UIntelRealsenseTracker* trackerToAt
 
     myAttachedTracker = trackerToAttach;
 	if(successful){
-        UE_LOG(LogTemp, Warning, TEXT("DLL Loaded, Started Renderer!"));  
-//		FuncPtr fp = &DebugMessage;	
-//		m_SetDebugFunction(fp);
+		FuncPtr fp = &DebugMessage;	
+		m_SetDebugFunction(WindowID,fp);
 		rendererInstance = this;
 		m_StartWindowById(WindowID,width,height,true);      	
 		m_SetColorFormat(0);
 		OnRenderedFrameCallback orfc = &UIntelRealsenseTracker::RenderedFrameCallback;
         m_SetOnReceivedFrameCallback(WindowID,orfc);
 		m_SetEnableFlagWarping(WindowID,useTemporalReprojection);
-		m_InitializeGraphics(WindowID);		
+		m_InitializeGraphics(WindowID);			
 		m_SetRequiredValuesById(WindowID,LeftUVToRectX,LeftUVToRectY,RightUVToRectX,RightUVToRectY,LeftEyeProjectionMatrix,RightEyeProjectionMatrix,LeftEyeInvProjectionMatrix,RightEyeInvProjectionMatrix,LeftOffset,RightOffset,eyeBorders);			
 		m_SetWindowRectById(WindowID,xPlacement,yPlacement,width,height);
 

@@ -6,6 +6,7 @@
 #include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "EskyDataContainer.h"
+#include "GenericPlatform/GenericPlatformProcess.h"
 #include "EskyNativeRenderer.generated.h"
 
 
@@ -108,10 +109,8 @@ public:
         0.28473961353302,
         0.5733417272567749,
         -0.7395226955413818};
-
-        void *v_dllHandle_renderer;
-        bool importDLL();
-	void freeDLL();  
+        static bool importDLL();
+	static void freeDLL();  
         void SetDeltasLocal(int iD, float* leftEye, float* rightEye);
         static void SetDeltas(int ID, float* leftEye, float* rightEye);
         UFUNCTION(BlueprintCallable,Category="Esky Renderer Settings") 
