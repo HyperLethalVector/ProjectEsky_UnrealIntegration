@@ -81,7 +81,15 @@ DerivedDataCache/*
 !Plugins/ProjectEskyLLAPIRenderer.dll
 !Plugins/realsense2.dll
 !Plugins/TextureShareSDK.dll
-!Plugins/Esky/Binaries/*
+!Plugins/Esky/Binaries/DataConfig.json
+!Plugins/Esky/Binaries/shader.shader
+!Plugins/Esky/Binaries/Win64/DataConfig.json
+
+!Plugins/Esky/Binaries/Win64/libProjectEskyLLAPIIntel.dll
+!Plugins/Esky/Binaries/Win64/ProjectEskyLLAPIRenderer.dll
+!Plugins/Esky/Binaries/Win64/realsense2.dll
+!Plugins/Esky/Binaries/Win64/shaders.shader
+!Plugins/Esky/Binaries/Win64/TextureShareSDK.dll
 !Binaries/Win64/LeapC.dll
 !Plugins/LeapUnreal-3.6.0/Binaries/Win64/LeapC.dll
 !Plugins/LeapUnreal-3.6.0/Source/ThirdParty/LeapSDK/Lib/Android/arm64-v8a/libLeapC.so
