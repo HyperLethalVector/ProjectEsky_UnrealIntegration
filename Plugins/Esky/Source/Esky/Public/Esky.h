@@ -4,6 +4,8 @@
 
 #include "Modules/ModuleManager.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(EskyLog, Log, All);
+
 class FEskyModule : public IModuleInterface
 {
 public:
@@ -11,8 +13,8 @@ public:
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
-
-private:
-	/** Handle to the test dll we will load */
-	void*	ExampleLibraryHandle;
+	void* GetTrackerDLLHandle();
+	void* GetRendererDLLHandle();
 };
+void* TrackerDLLHandle;
+void* RendererDLLHandle;

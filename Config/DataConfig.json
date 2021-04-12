@@ -65,10 +65,10 @@
         0.23000603914260865,
         -0.7914647459983826,
         0.643271267414093 ],
-	"windowWidth": 2880,
-	"windowHeight": 1600,
-	"windowOffsetX": 0,
-	"windowOffsetY": 1080,
+	"windowWidth": 640,
+	"windowHeight": 480,
+	"windowOffsetX": 1920,
+	"windowOffsetY": 0,
 	"leapMotionPositionOffsetToEye":
 	{
 		"x":5.0,

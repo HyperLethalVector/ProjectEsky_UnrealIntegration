@@ -109,7 +109,7 @@ public:
     bool useTemporalReprojection = true;
 };
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class PROJECTESKY_API UEskyDataContainer : public UActorComponent
+class UEskyDataContainer : public UActorComponent
 {
 	GENERATED_BODY()
 

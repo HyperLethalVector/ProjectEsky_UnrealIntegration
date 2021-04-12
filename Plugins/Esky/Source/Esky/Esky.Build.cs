@@ -27,7 +27,15 @@ public class Esky : ModuleRules
 			{
 				"Core",
 				"EskyLibrary",
-				"Projects"
+				"Projects", 
+				"Core", 
+				"CoreUObject", 
+				"Engine", 
+				"InputCore", 
+				"RHI", 
+				"RenderCore",
+				"JsonUtilities",				
+				"Json"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
