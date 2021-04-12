@@ -97,11 +97,11 @@ public class EskyLibrary : ModuleRules
 
 
 			// Ensure that the DLL is staged along with the executable
-			RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/EskyLibrary/Win64/TextureShareSDK.dll");
-			RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/EskyLibrary/Win64/libProjectEskyLLAPIIntel.dll");
-			RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/EskyLibrary/Win64/ProjectEskyLLAPIRenderer.dll");
-			RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/EskyLibrary/Win64/realsense2.dll");
-			RuntimeDependencies.Add("$(PluginDir)/Binaries/ThirdParty/EskyLibrary/Win64/shaders.shader");
+			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/TextureShareSDK.dll");
+			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/libProjectEskyLLAPIIntel.dll");
+			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/ProjectEskyLLAPIRenderer.dll");
+			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/realsense2.dll");
+			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/shaders.shader");
 		}
 	}
 }

@@ -67,31 +67,31 @@ UIntelRealsenseTracker* intelRealsenseInstance;
 // Method to import a DLL.
 bool UIntelRealsenseTracker::importDLL()
 {
-    if (TrackerDLLHandle != NULL)
+    if (TrackerDLLHandlePlugin != NULL)
     {
         //import all the functions
 
-        m_RegisterDeltaPoseUpdate = (_RegisterDeltaPoseUpdate)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("RegisterDeltaPoseUpdate"));
-        m_HookDeviceToIntel = (_HookDeviceToIntel)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("HookDeviceToIntel"));
-        m_SetFilterEnabled = (_SetFilterEnabled)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("SetFilterEnabled"));
-        m_UpdateFilterTranslationParams = (_UpdateFilterTranslationParams)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("UpdateFilterTranslationParams"));
-        m_UpdateFilterRotationParams = (_UpdateFilterRotationParams)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("UpdateFilterRotationParams"));
-        m_GetLatestPose = (_GetLatestPose)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("GetLatestPose"));
-        m_InitializeTrackerObject = (_InitializeTrackerObject)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("InitializeTrackerObject"));
-        m_SetSerialComPort = (_SetSerialComPort)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("SetSerialComPort"));
-        m_StartTrackerThread = (_StartTrackerThread)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("StartTrackerThread"));
-        m_StopTrackers = (_StopTrackers)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("StopTrackers"));
-        m_RegisterObjectPoseCallback = (_RegisterObjectPoseCallback)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("RegisterObjectPoseCallback"));
-        m_RegisterLocalizationCallback = (_RegisterLocalizationCallback)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("RegisterLocalizationCallback"));
-        m_RegisterBinaryMapCallback = (_RegisterBinaryMapCallback)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("RegisterBinaryMapCallback"));
-        m_SetBinaryMapData = (_SetBinaryMapData)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("SetBinaryMapData"));
-        m_ObtainOriginInLocalizedMap = (_ObtainOriginInLocalizedMap)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("ObtainOriginInLocalizedMap"));
-        m_ObtainMap = (_ObtainMap)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("ObtainMap"));
-        m_FlagMapImport = (_FlagMapImport)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("FlagMapImport"));
-        m_EnablePassthrough = (_EnablePassthrough)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("EnablePassthrough"));
-        m_PostRenderReset = (_PostRenderReset)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("PostRenderReset"));
-        m_SetLeftRightEyeTransform = (_SetLeftRightEyeTransform)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("SetLeftRightEyeTransform"));
-        m_SetTimeOffset = (_SetTimeOffset)FPlatformProcess::GetDllExport(TrackerDLLHandle, *FString("SetTimeOffset"));
+        m_RegisterDeltaPoseUpdate = (_RegisterDeltaPoseUpdate)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("RegisterDeltaPoseUpdate"));
+        m_HookDeviceToIntel = (_HookDeviceToIntel)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("HookDeviceToIntel"));
+        m_SetFilterEnabled = (_SetFilterEnabled)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("SetFilterEnabled"));
+        m_UpdateFilterTranslationParams = (_UpdateFilterTranslationParams)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("UpdateFilterTranslationParams"));
+        m_UpdateFilterRotationParams = (_UpdateFilterRotationParams)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("UpdateFilterRotationParams"));
+        m_GetLatestPose = (_GetLatestPose)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("GetLatestPose"));
+        m_InitializeTrackerObject = (_InitializeTrackerObject)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("InitializeTrackerObject"));
+        m_SetSerialComPort = (_SetSerialComPort)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("SetSerialComPort"));
+        m_StartTrackerThread = (_StartTrackerThread)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("StartTrackerThread"));
+        m_StopTrackers = (_StopTrackers)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("StopTrackers"));
+        m_RegisterObjectPoseCallback = (_RegisterObjectPoseCallback)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("RegisterObjectPoseCallback"));
+        m_RegisterLocalizationCallback = (_RegisterLocalizationCallback)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("RegisterLocalizationCallback"));
+        m_RegisterBinaryMapCallback = (_RegisterBinaryMapCallback)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("RegisterBinaryMapCallback"));
+        m_SetBinaryMapData = (_SetBinaryMapData)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("SetBinaryMapData"));
+        m_ObtainOriginInLocalizedMap = (_ObtainOriginInLocalizedMap)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("ObtainOriginInLocalizedMap"));
+        m_ObtainMap = (_ObtainMap)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("ObtainMap"));
+        m_FlagMapImport = (_FlagMapImport)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("FlagMapImport"));
+        m_EnablePassthrough = (_EnablePassthrough)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("EnablePassthrough"));
+        m_PostRenderReset = (_PostRenderReset)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("PostRenderReset"));
+        m_SetLeftRightEyeTransform = (_SetLeftRightEyeTransform)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("SetLeftRightEyeTransform"));
+        m_SetTimeOffset = (_SetTimeOffset)FPlatformProcess::GetDllExport(TrackerDLLHandlePlugin, *FString("SetTimeOffset"));
         return true;
     }
     return false;    // Return an error.
@@ -105,7 +105,7 @@ UIntelRealsenseTracker::UIntelRealsenseTracker(){
  //   setInstance(*this);
 }
 void UIntelRealsenseTracker::freeDLL(){
-    if (TrackerDLLHandle != NULL)
+    if (TrackerDLLHandlePlugin != NULL)
     {
         //import all the functions
         intelRealsenseInstance = NULL;

@@ -1,5 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 #pragma once
 #include "JsonObjectConverter.h"
 #include "Misc/FileHelper.h"
@@ -9,32 +7,16 @@
 #include "Containers/Array.h"
 #include "Containers/UnrealString.h"
 #include "Modules/ModuleManager.h"
-#include "EskyConfigContainer.h"
-
-DECLARE_LOG_CATEGORY_EXTERN(EskyLog, Log, All);
-
-class FEskyModule : public IModuleInterface
+#include "EskyConfigContainer.generated.h"
+USTRUCT()
+struct FConfigInformation
 {
+    GENERATED_BODY()
 public:
-    int WindowID = 0;
-    int width= 0;
-    int height = 0;
-    int xPlacement = 0;
-    int yPlacement = 0;
-    bool useTemporalReprojection = false;
-    float* LeftEyeProjectionMatrix = new float[16]{ 1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0 };
-    float* RightEyeProjectionMatrix = new float[16]{ 1.285333,0,0,0,0,1.428148,0,0,0,0,-1.0002,-0.20002,0,0,-1,0 };
-    float* LeftEyeInvProjectionMatrix = new float[16]{ 0.7780085,0,0,0,0,0.7002077,0,0,0,0,0,-1,0,0,-4.9995,5.005 };
-    float* RightEyeInvProjectionMatrix = new float[16]{ 0.7780085,0,0,0,0,0.7002077,0,0,0,0,0,-1,0,0,-4.9995,5.005 };
-    float* LeftOffset = new float[4]{ 0.0,0.0 };
-    float* RightOffset = new float[4]{ 0.0,0.0 };
-    float* eyeBorders = new float[8]{ 0.0,1.0,0.0,1.0,.0,1.0,0.0,1.0 };
 
-    float* LeftUVToRectX = new float[16]{ -0.3844103217124939,
-        0.9711242318153381,
-        -0.2508922219276428,
-        0.2063561975955963,
-        0.058278605341911319,
+    TArray<float> leftEyeTransformFromTracker = { 1,0,0,0,0,0.9092361,-0.4162807,0,0,0.4162807,0.9092361,0,-0.0284,0.06417969,0.06949941,1 };
+    TArray<float> rightEyeTransformFromTracker = { 1,0,0,0,0,0.9092361,-0.4162807,0,0,0.4162807,0.9092361,0,0.0356,0.06417969,0.06949941,1 };
+    TArray<float> LeftUVToRectX = { -0.3844103217124939,0.9711242318153381,-0.2508922219276428,0.2063561975955963,0.058278605341911319,
         0.13342826068401338,
         0.2762235105037689,
         -0.07580044865608216,
@@ -46,8 +28,7 @@ public:
         -0.2913084030151367,
         0.9610205292701721,
         -0.40973442792892458 };
-
-    float* LeftUVToRectY = new float[16]{ -0.3913276493549347,
+    TArray<float> LeftUVToRectY = { -0.3913276493549347,
         0.13756594061851502,
         -0.374609112739563,
         -0.026859400793910028,
@@ -63,8 +44,7 @@ public:
         -0.5150173306465149,
         1.8977105617523194,
         -1.4114274978637696 };
-
-    float* RightUVToRectX = new float[16]{ -0.3506585359573364,
+    TArray<float> RightUVToRectX = { -0.3506585359573364,
         0.9476522207260132,
         0.17013339698314668,
         0.22676172852516175,
@@ -80,8 +60,7 @@ public:
         7.176768779754639,
         -13.467972755432129,
         7.434933662414551 };
-
-    float* RightUVToRectY = new float[16]{ -0.31777408719062807,
+    TArray<float> RightUVToRectY = { -0.31777408719062807,
         -0.01822761259973049,
         -0.030633892863988878,
         0.27896520495414736,
@@ -97,18 +76,14 @@ public:
         0.28473961353302,
         0.5733417272567749,
         -0.7395226955413818 };
-    FConfigInformation myInfo;
-    FEskyModule* instance;
-    /** IModuleInterface implementation */
-	virtual void StartupModule() override;
-	virtual void ShutdownModule() override;
-    void LoadConfig(FString fileName);
-	void* GetTrackerDLLHandle();
-	void* GetRendererDLLHandle();
-    void StartRendererComponent();
-    void StopRendererComponent();
+    int WindowWidth = 640;
+    int WindowHeight = 480;
+    int WindowOffsetX = 0;
+    int WindowOffsetY = 0;
+    FVector LeapMotionPositionOffsetToEye = FVector(0, 0, 0);
+    FVector LeapMotionRotationOffsetToEye = FVector(0, 0, 0);
+    FVector CameraRigPositionOffsetFromTracker = FVector(0, 0, 0);
+    FVector CameraRigRotationOffsetFromTracker = FVector(0, 0, 0);
+    int IPD;// currently unused    
+    bool useTemporalReprojection = true;
 };
-
-#pragma once
-void* TrackerDLLHandlePlugin;
-void* RendererDLLHandlePlugin;

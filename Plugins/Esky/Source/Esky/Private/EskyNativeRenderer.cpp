@@ -53,26 +53,26 @@ void UEskyNativeRenderer::SetDeltas(int ID, float* leftEye, float* rightEye){
 };
 bool UEskyNativeRenderer::importDLL()
 {
-	if (RendererDLLHandle != NULL)
+	if (RendererDLLHandlePlugin != NULL)
 	{
-		m_StartWindowById = (_StartWindowById)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("StartWindowById"));
-		m_StopWindowById = (_StopWindowById)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("StopWindowById"));
-		m_SetWindowRectById = (_SetWindowRectById)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetWindowRectById"));
-		m_SetDeltas= (_SetDeltas)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetDeltas"));
-		m_InitializeGraphics = (_InitializeGraphics)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("InitializeGraphics"));
-		m_SetEnableFlagWarping= (_SetEnableFlagWarping)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetEnableFlagWarping"));
-		m_SetRequiredValuesById= (_SetRequiredValuesById)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetRequiredValuesById"));
-		m_SetBrightness= (_SetBrightness)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetBrightness"));
-		m_SetDebugFunction = (_SetDebugFunction)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetDebugFunction"));
-		m_FreeDebugFunction =(_FreeDebugFunction)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("FreeDebugFunction"));
-		m_SetColorFormat = (_SetColorFormat)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetColorFormat"));
-		m_SetOnReceivedFrameCallback = (_SetOnReceivedFrameCallback)FPlatformProcess::GetDllExport(RendererDLLHandle, *FString("SetOnReceivedFrameCallback"));
+		m_StartWindowById = (_StartWindowById)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("StartWindowById"));
+		m_StopWindowById = (_StopWindowById)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("StopWindowById"));
+		m_SetWindowRectById = (_SetWindowRectById)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetWindowRectById"));
+		m_SetDeltas= (_SetDeltas)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetDeltas"));
+		m_InitializeGraphics = (_InitializeGraphics)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("InitializeGraphics"));
+		m_SetEnableFlagWarping= (_SetEnableFlagWarping)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetEnableFlagWarping"));
+		m_SetRequiredValuesById= (_SetRequiredValuesById)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetRequiredValuesById"));
+		m_SetBrightness= (_SetBrightness)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetBrightness"));
+		m_SetDebugFunction = (_SetDebugFunction)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetDebugFunction"));
+		m_FreeDebugFunction =(_FreeDebugFunction)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("FreeDebugFunction"));
+		m_SetColorFormat = (_SetColorFormat)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetColorFormat"));
+		m_SetOnReceivedFrameCallback = (_SetOnReceivedFrameCallback)FPlatformProcess::GetDllExport(RendererDLLHandlePlugin, *FString("SetOnReceivedFrameCallback"));
 		return true;
 	}
 	return false;
 }
 void UEskyNativeRenderer::freeDLL(){
-	if(RendererDLLHandle != NULL){
+	if(RendererDLLHandlePlugin != NULL){
 			UE_LOG(LogTemp, Warning, TEXT("Freeing the DLL!")); 
 			m_StartWindowById = NULL;
             m_StopWindowById = NULL;
@@ -114,13 +114,8 @@ void UEskyNativeRenderer::BeginPlay()
 void UEskyNativeRenderer::CloseRenderer(){
 	if(successful){
 		rendererInstance = NULL;	
-		m_SetOnReceivedFrameCallback(WindowID,nullptr);
-		m_SetDebugFunction(WindowID,nullptr);  		
-		UE_LOG(LogTemp, Warning, TEXT("Stopping renderer!"));                        			
-		m_StopWindowById(WindowID);			
-		UE_LOG(LogTemp, Warning, TEXT("Freeing the DLL!"));               
-		freeDLL();
-		UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));                                			
+		m_SetOnReceivedFrameCallback(WindowID,nullptr);		               
+		freeDLL();                            			
     }
 }
 
@@ -135,32 +130,14 @@ void UEskyNativeRenderer::TickComponent(float DeltaTime, ELevelTick TickType, FA
 }
 
 void UEskyNativeRenderer::SetAttachedTracker(UIntelRealsenseTracker* trackerToAttach){       
-    UE_LOG(LogTemp, Warning, TEXT("Attached the Tracker!"));  
     successful = importDLL();
-    UE_LOG(LogTemp, Warning, TEXT("Imported the DLL!"));  
     myAttachedTracker = trackerToAttach;
 	if(successful){
-		FuncPtr fp = &DebugMessage;	
-
-		m_SetDebugFunction(WindowID,fp);
-	    UE_LOG(LogTemp, Warning, TEXT("Attached the debug message"));  				
 		rendererInstance = this;
-
-		m_StartWindowById(WindowID,width,height,true);      	
-	    UE_LOG(LogTemp, Warning, TEXT("Started Window"));  				
-		m_SetColorFormat(0);
 		OnRenderedFrameCallback orfc = &UIntelRealsenseTracker::RenderedFrameCallback;
-        m_SetOnReceivedFrameCallback(WindowID,orfc);
-	    UE_LOG(LogTemp, Warning, TEXT("Set received frame callback"));  						
-		m_SetEnableFlagWarping(WindowID,useTemporalReprojection);
-	    UE_LOG(LogTemp, Warning, TEXT("Init Graphics"));  								
-		m_InitializeGraphics(WindowID);			
-		m_SetRequiredValuesById(WindowID,LeftUVToRectX,LeftUVToRectY,RightUVToRectX,RightUVToRectY,LeftEyeProjectionMatrix,RightEyeProjectionMatrix,LeftEyeInvProjectionMatrix,RightEyeInvProjectionMatrix,LeftOffset,RightOffset,eyeBorders);			
-	    UE_LOG(LogTemp, Warning, TEXT("Init Graphics"));  										
-		m_SetWindowRectById(WindowID,xPlacement,yPlacement,width,height);
-
+        m_SetOnReceivedFrameCallback(WindowID,orfc);	   
 	}else{
-        UE_LOG(LogTemp, Warning, TEXT("Renderer DLL wasn't loaded"));     
+        UE_LOG(LogTemp, Warning, TEXT("Renderer DLL wasn't loaded on startup"));     
 	}
 }
 void UEskyNativeRenderer::ApplySettings(UEskyDataContainer* dataContainer){
