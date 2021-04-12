@@ -124,15 +124,14 @@ void UEskyNativeRenderer::BeginPlay()
 	// ...
 	
 }
-void UEskyNativeRenderer::EndPlay(const EEndPlayReason::Type EndPlayReason){
-	Super::EndPlay(EndPlayReason);
+void UEskyNativeRenderer::CloseRenderer(){
 	if(successful){
 		rendererInstance = NULL;	
+		m_SetOnReceivedFrameCallback(WindowID,nullptr);
+		m_SetDebugFunction(WindowID,nullptr);  		
 		UE_LOG(LogTemp, Warning, TEXT("Stopping renderer!"));                        			
 		m_StopWindowById(WindowID);			
 		UE_LOG(LogTemp, Warning, TEXT("Freeing the DLL!"));               
-		m_SetOnReceivedFrameCallback(WindowID,nullptr);
-		m_SetDebugFunction(WindowID,nullptr);  
 		freeDLL();
 		UE_LOG(LogTemp, Warning, TEXT("Free'd the DLL!"));                                			
     }
@@ -151,19 +150,26 @@ void UEskyNativeRenderer::TickComponent(float DeltaTime, ELevelTick TickType, FA
 void UEskyNativeRenderer::SetAttachedTracker(UIntelRealsenseTracker* trackerToAttach){       
     UE_LOG(LogTemp, Warning, TEXT("Attached the Tracker!"));  
     successful = importDLL();
-
+    UE_LOG(LogTemp, Warning, TEXT("Imported the DLL!"));  
     myAttachedTracker = trackerToAttach;
 	if(successful){
 		FuncPtr fp = &DebugMessage;	
+
 		m_SetDebugFunction(WindowID,fp);
+	    UE_LOG(LogTemp, Warning, TEXT("Attached the debug message"));  				
 		rendererInstance = this;
+
 		m_StartWindowById(WindowID,width,height,true);      	
+	    UE_LOG(LogTemp, Warning, TEXT("Started Window"));  				
 		m_SetColorFormat(0);
 		OnRenderedFrameCallback orfc = &UIntelRealsenseTracker::RenderedFrameCallback;
         m_SetOnReceivedFrameCallback(WindowID,orfc);
+	    UE_LOG(LogTemp, Warning, TEXT("Set received frame callback"));  						
 		m_SetEnableFlagWarping(WindowID,useTemporalReprojection);
+	    UE_LOG(LogTemp, Warning, TEXT("Init Graphics"));  								
 		m_InitializeGraphics(WindowID);			
 		m_SetRequiredValuesById(WindowID,LeftUVToRectX,LeftUVToRectY,RightUVToRectX,RightUVToRectY,LeftEyeProjectionMatrix,RightEyeProjectionMatrix,LeftEyeInvProjectionMatrix,RightEyeInvProjectionMatrix,LeftOffset,RightOffset,eyeBorders);			
+	    UE_LOG(LogTemp, Warning, TEXT("Init Graphics"));  										
 		m_SetWindowRectById(WindowID,xPlacement,yPlacement,width,height);
 
 	}else{
