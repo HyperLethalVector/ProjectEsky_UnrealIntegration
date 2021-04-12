@@ -1,4 +1,12 @@
 {
-	"configurations": [
-	]
+    "configurations": [
+        {
+            "name": "ProjectEskyEditor Editor Win64 Development (ProjectEsky)",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky.json",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
 }

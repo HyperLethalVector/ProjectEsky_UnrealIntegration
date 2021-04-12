@@ -1,8 +1,12 @@
 .git
+.vs
 .vscode
 Content
 DerivedDataCache
 Intermediate
 Saved
 Script
+Plugins/Esky/Content
+Plugins/Esky/Intermediate
 Plugins/LeapUnreal-3.6.0/Content
+Plugins/LeapUnreal-3.6.0/Intermediate

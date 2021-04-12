@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Esky",
+	"Description": "A cool plugin",
+	"Category": "Other",
+	"CreatedBy": "Damien Rompapas",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "Esky",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

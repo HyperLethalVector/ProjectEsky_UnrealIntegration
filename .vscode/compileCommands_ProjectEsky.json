@@ -1,27 +1,402 @@
 [
 	{
-		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\IntelRealsenseTracker.cpp",
-		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\Esky\\\\Source\\\\Esky\\\\Esky.Build.cs",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\Esky.5.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
-		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\IntelRealsenseTracker.h",
-		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\Esky\\\\Source\\\\Esky\\\\Private\\\\Esky.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\Esky.5.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
-		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\ProjectEsky.Build.cs",
-		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\Esky\\\\Source\\\\Esky\\\\Public\\\\Esky.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\Esky.5.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
-		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\ProjectEsky.cpp",
-		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\BodyState.Build.cs",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	},
 	{
-		"file": "C:\\\\UnrealProjects\\\\ProjectEsky\\\\Source\\\\ProjectEsky\\\\ProjectEsky.h",
-		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.182.rsp\"",
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\AnimNode_ModifyBodyStateMappedBones.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateAnimInstance.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateBoneComponent.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateBPLibrary.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateDevice.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateDeviceConfig.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateEstimatorComponent.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateHMDDevice.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateHMDDevice.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateHMDSnapshot.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateSelectorComponent.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateSkeletonStorage.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateSkeletonStorage.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateUtility.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\BodyStateUtility.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\FBodyState.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\FBodyState.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\FBodyStateInputDevice.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\FBodyStateInputDevice.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\Skeleton\\\\BodyStateArm.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\Skeleton\\\\BodyStateBone.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Private\\\\Skeleton\\\\BodyStateSkeleton.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\AnimNode_ModifyBodyStateMappedBones.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateAnimInstance.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateBoneComponent.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateBPLibrary.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateDevice.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateDeviceConfig.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateEnums.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateEstimatorComponent.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateHMDSnapshot.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateInputInterface.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\BodyStateSelectorComponent.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\IBodyState.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\Skeleton\\\\BodyStateArm.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\Skeleton\\\\BodyStateBone.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\BodyState\\\\Public\\\\Skeleton\\\\BodyStateSkeleton.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\BodyState.8.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\LeapMotion.Build.cs",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\LeapMotion_APL.xml",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\FLeapMotionInputDevice.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\FLeapMotionInputDevice.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\FLeapMotionPlugin.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\FLeapMotionPlugin.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapAsync.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapAsync.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapBlueprintFunctionLibrary.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapComponent.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapImage.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapImage.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapLiveLink.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapLiveLink.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapMotionData.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapUtility.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapUtility.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapWrapper.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Private\\\\LeapWrapper.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Public\\\\ILeapMotionPlugin.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Public\\\\LeapBlueprintFunctionLibrary.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Public\\\\LeapComponent.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotion\\\\Public\\\\LeapMotionData.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotion.6.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotionEditor\\\\LeapMotionEditor.Build.cs",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotionEditor.7.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotionEditor\\\\Private\\\\AnimGraphNode_ModifyBodyStateMappedBones.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotionEditor.7.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotionEditor\\\\Private\\\\LeapMotionEditorModule.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotionEditor.7.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotionEditor\\\\Public\\\\AnimGraphNode_ModifyBodyStateMappedBones.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotionEditor.7.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Plugins\\\\LeapUnreal-3.6.0\\\\Source\\\\LeapMotionEditor\\\\Public\\\\LeapMotionEditorModule.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\LeapMotionEditor.7.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Private\\\\CameraUtils.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Private\\\\EskyDataContainer.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Private\\\\EskyNativeRenderer.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Private\\\\IntelRealsenseTracker.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\ProjectEsky.Build.cs",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\ProjectEsky.cpp",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\ProjectEsky.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Public\\\\CameraUtils.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Public\\\\EskyDataContainer.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Public\\\\EskyNativeRenderer.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ProjectEsky_UnrealIntegration\\\\Source\\\\ProjectEsky\\\\Public\\\\IntelRealsenseTracker.h",
+		"command": "cl.exe @\"C:\\UnrealProjects\\ProjectEsky_UnrealIntegration\\.vscode\\compileCommands_ProjectEsky\\ProjectEsky.186.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
 	}
 ]
