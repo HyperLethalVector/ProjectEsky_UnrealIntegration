@@ -71,14 +71,14 @@
 	"windowOffsetY": 1080,
 	"leapMotionPositionOffsetToEye":
 	{
-		"x": 0,
-		"y": 0,
-		"z": 0
+		"x":5.0,
+		"y": -3.96225,
+		"z": 5.1
 	},
 	"leapMotionRotationOffsetToEye":
 	{
 		"x": 0,
-		"y": 0,
+		"y": -24,
 		"z": 0
 	},
 	"cameraRigPositionOffsetFromTracker":
