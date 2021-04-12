@@ -15,4 +15,4 @@ How to use:
 - Hit play, have fun!
 
 Known Issues
-- Having the editor open will prevent standalone builds with esky enabled not to work
+- Having the editor open will prevent standalone builds with `esky enabled` not to work
