@@ -105,6 +105,8 @@ public:
     FVector CameraRigRotationOffsetFromTracker = FVector(0,0,0);
     UPROPERTY(BlueprintReadWrite, Category="ReflectionPoint")	
     int IPD;// currently unused    
+    UPROPERTY(BlueprintReadWrite, Category="ReflectionPoint")
+    bool useTemporalReprojection = true;
 };
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class PROJECTESKY_API UEskyDataContainer : public UActorComponent

@@ -180,12 +180,12 @@ void UEskyNativeRenderer::ApplySettings(UEskyDataContainer* dataContainer){
     for(int i = 0; i < 16; i++){
          LeftUVToRectX[i] = dataContainer->myConfig.LeftUVToRectX[i];
          LeftUVToRectY[i] = dataContainer->myConfig.LeftUVToRectY[i];         
-
          RightUVToRectX[i] = dataContainer->myConfig.RightUVToRectX[i];
-         RightUVToRectY[i] = dataContainer->myConfig.RightUVToRectY[i];         
-		 width = dataContainer->myConfig.WindowWidth;
-		 height = dataContainer->myConfig.WindowHeight;
-		 xPlacement = dataContainer->myConfig.WindowOffsetX;
-		 yPlacement = dataContainer->myConfig.WindowOffsetY;
-    }
+         RightUVToRectY[i] = dataContainer->myConfig.RightUVToRectY[i];      
+    }	   
+	width = dataContainer->myConfig.WindowWidth;
+	height = dataContainer->myConfig.WindowHeight;
+	xPlacement = dataContainer->myConfig.WindowOffsetX;
+	yPlacement = dataContainer->myConfig.WindowOffsetY;
+	useTemporalReprojection = dataContainer->myConfig.useTemporalReprojection;
 }
