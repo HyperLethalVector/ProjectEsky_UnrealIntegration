@@ -2,24 +2,18 @@
 
 This is experimental, and still a work in progress.
 
-What is working:
-
-- Undistortion rendering
-- Tracking (and relocalization)
-
-What is not working:
-
-- Temporal Reprojection
-
 What is missing:
 
 - MRTK Integration
-- Config files
 
 How to use:
 
 - Clone project
+- Open Config/DataConfig.json and update your v2 render float variables, and set your display offsets, as well as your leapmotion tracker and camera rig offsets
 - Open in unreal
-- Copy the 'TestMap' resource (for you to edit)/Drag n Drop the 'NSRig' Actor into your map
-- Edit the settings on the renderer component (Attached to the NSRig Actor)
-- Copy your 4 float files (for v2 rendering) to the EskyNativeRenderer.h file
+- The 'Test Map' within the Esky plugin's content is your go to default scene setup, alternatively just drag a 'NSRig' actor from the esky content folder into the scene
+- Hit play, have fun!
+
+Limitations:
+
+- Only works with 'play in editor', does not work with standalone PIE or on external build... yet!
