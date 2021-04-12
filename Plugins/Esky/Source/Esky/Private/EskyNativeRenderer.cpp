@@ -136,7 +136,8 @@ void UEskyNativeRenderer::SetAttachedTracker(UIntelRealsenseTracker* trackerToAt
 		rendererInstance = this;
 		OnRenderedFrameCallback orfc = &UIntelRealsenseTracker::RenderedFrameCallback;
         m_SetOnReceivedFrameCallback(WindowID,orfc);	   
-		m_SetWindowRectById(WindowID, xPlacement, yPlacement, width, height);
+		m_SetRequiredValuesById(WindowID, LeftUVToRectX, LeftUVToRectY, RightUVToRectX, RightUVToRectY, LeftEyeProjectionMatrix, RightEyeProjectionMatrix, LeftEyeInvProjectionMatrix, RightEyeInvProjectionMatrix, LeftOffset, RightOffset, eyeBorders);
+		m_SetWindowRectById(WindowID, xPlacement, yPlacement, width, height); 
 	}else{
         UE_LOG(LogTemp, Warning, TEXT("Renderer DLL wasn't loaded on startup"));     
 	}
