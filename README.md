@@ -5,6 +5,7 @@ This is experimental, and still a work in progress.
 What is missing:
 
 - MRTK Integration
+- Relocalization
 
 How to use:
 
@@ -16,3 +17,4 @@ How to use:
 
 Known Issues
 - Having the editor open will prevent standalone builds with `esky enabled` not to work
+
