@@ -84,7 +84,6 @@ public class EskyLibrary : ModuleRules
 			string PluginDLLPath2 = Path.Combine(BinariesPath, PlatformString, "libProjectEskyLLAPIIntel.dll");
 			string PluginDLLPath3 = Path.Combine(BinariesPath, PlatformString, "ProjectEskyLLAPIRenderer.dll");
 			string PluginDLLPath4 = Path.Combine(BinariesPath, PlatformString, "realsense2.dll");
-			string PluginShaderPath = Path.Combine(BinariesPath, PlatformString, "shaders.shader");
 
 			System.Console.WriteLine("Project plugin detected, using dll at " + PluginDLLPath3);
 
@@ -93,7 +92,6 @@ public class EskyLibrary : ModuleRules
 			CopyToProjectBinaries(PluginDLLPath2, Target);
 			CopyToProjectBinaries(PluginDLLPath3, Target);
 			CopyToProjectBinaries(PluginDLLPath4, Target);
-			CopyToProjectBinaries(PluginShaderPath, Target);
 
 
 			// Ensure that the DLL is staged along with the executable
@@ -101,7 +99,7 @@ public class EskyLibrary : ModuleRules
 			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/libProjectEskyLLAPIIntel.dll");
 			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/ProjectEskyLLAPIRenderer.dll");
 			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/realsense2.dll");
-			RuntimeDependencies.Add("$(PluginDir)/Binaries/Win64/shaders.shader");
+			RuntimeDependencies.Add("$(PluginDir)/Binaries/shaders.shader");
 		}
 	}
 }
