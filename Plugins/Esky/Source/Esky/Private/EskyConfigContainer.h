@@ -76,9 +76,9 @@ public:
         0.28473961353302,
         0.5733417272567749,
         -0.7395226955413818 };
-    int WindowWidth = 640;
-    int WindowHeight = 480;
-    int WindowOffsetX = 0;
+    int WindowWidth = 2880;
+    int WindowHeight = 1600;
+    int WindowOffsetX = -2000;
     int WindowOffsetY = 0;
     FVector LeapMotionPositionOffsetToEye = FVector(0, 0, 0);
     FVector LeapMotionRotationOffsetToEye = FVector(0, 0, 0);
